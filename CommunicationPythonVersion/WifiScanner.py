@@ -65,20 +65,3 @@ def check_json_format(json_data):
         if not required_keys.issubset(entry.keys()):
             return False
     return True
-
-################          ELIMINAR ESTO LUEGO              ################     
-
-def main():
-    wifi_scan_file = "wifi_scan.json"
-    while True:
-        networks = wifi_scan(wifi_scan_file)
-        print("Found {} networks".format(len(networks)))
-
-        save_json("wifi_scan.json", networks)
-        print("Saved results to wifi_scan.json")
-        print("Saved networks are: ",networks)
-
-        time.sleep(10)  # Scan every 10 seconds (adjust as needed)
-
-
-main()
